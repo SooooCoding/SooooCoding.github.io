@@ -23,6 +23,7 @@ img{max-width:100%;display:block}
 /* Layout */
 .container{max-width:1200px;margin:0 auto;padding:24px;display:flex;gap:28px}
 .sidebar{flex:0 0 280px;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);position:sticky;top:16px;height:calc(100dvh - 32px);padding:24px;display:flex;flex-direction:column;align-items:center}
+.avatar{ object-fit: cover; }
 .avatar{width:140px;height:140px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#ffd6a5,#fdffb6 60%,#caffbf);display:grid;place-items:center;color:#222;font-weight:700;font-size:40px;letter-spacing:.5px;overflow:hidden}
 .name{margin:16px 0 4px;font-weight:800;letter-spacing:.5px}
 .role{margin:0;color:var(--muted);font-size:14px;text-align:center}
@@ -73,7 +74,7 @@ main{flex:1 1 auto}
 <div class="container">
 <!-- Sidebar -->
 <aside class="sidebar">
-<div class="avatar" aria-label="avatar">SB</div>
+<img class="avatar" src="ID Photo.jpg" alt="Sujin Bae" />
 <h3 class="name">SUJIN BAE</h3>
 <p class="role">Graduate Software Developer · Auckland, NZ</p>
 <nav class="nav" aria-label="Site">
