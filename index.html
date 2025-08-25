@@ -15,13 +15,15 @@
       --radius:16px;
     }
     html{scroll-behavior:smooth}
-    body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"}
+    body{margin:0;background:var(--bg);color:var(--text);
+         font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,"Apple Color Emoji","Segoe UI Emoji"}
     a{color:var(--primary);text-decoration:none}
     img{max-width:100%;display:block}
 
     /* Layout */
     .container{max-width:1200px;margin:0 auto;padding:24px;display:flex;gap:28px}
-    .sidebar{flex:0 0 280px;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);position:sticky;top:16px;height:calc(100dvh - 32px);padding:24px;display:flex;flex-direction:column;align-items:center}
+    .sidebar{flex:0 0 280px;background:var(--surface);border-radius:var(--radius);box-shadow:var(--shadow);
+             position:sticky;top:16px;height:calc(100dvh - 32px);padding:24px;display:flex;flex-direction:column;align-items:center}
     .avatar{width:140px;height:140px;border-radius:50%;object-fit:cover;display:block;overflow:hidden}
     .name{margin:16px 0 4px;font-weight:800;letter-spacing:.5px}
     .role{margin:0;color:var(--muted);font-size:14px;text-align:center}
@@ -61,6 +63,33 @@
     @media (max-width:560px){
       .grid{grid-template-columns:1fr}
     }
+
+    /* Screenshots grid – neat 2-column gallery with captions */
+    .shots{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:14px;
+      margin-top:12px;
+    }
+    .shot{
+      background:var(--surface);
+      border:1px solid #eef2f7;
+      border-radius:12px;
+      box-shadow:var(--shadow);
+      overflow:hidden;
+    }
+    .shot img{
+      width:100%;
+      height:auto;
+      display:block;
+    }
+    .shot figcaption{
+      padding:8px 10px;
+      font-size:13px;
+      color:var(--muted);
+      border-top:1px solid #f1f5f9;
+    }
+    @media (max-width:980px){ .shots{grid-template-columns:1fr} }
   </style>
 </head>
 <body>
@@ -117,15 +146,29 @@
             </div>
           </div>
           <div class="links">
-            <a href="#" target="_blank">Demo</a>
+            <a href="#cms">Demo</a>
             <a href="https://github.com/SooooCoding/customer-management-system" target="_blank" rel="noopener">Code</a>
             <a href="#cms">Case study</a>
           </div>
+
+          <!-- screenshot gallery -->
           <div class="shots">
-            <img src="assets/cms-01-table.jpg"  alt="Customer list table view" loading="lazy">
-            <img src="assets/cms-02-add.jpg"    alt="Add Customer dialog with file upload" loading="lazy">
-            <img src="assets/cms-03-delete.jpg" alt="Delete confirmation dialog" loading="lazy">
-            <img src="assets/cms-04-search.jpg" alt="Search filter applied to customer list" loading="lazy">
+            <figure class="shot">
+              <img src="assets/cms-01-table.jpg"  alt="Customer list table view" loading="lazy">
+              <figcaption>Table view</figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="assets/cms-02-add.jpg"    alt="Add Customer dialog with file upload" loading="lazy">
+              <figcaption>Add customer dialog</figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="assets/cms-03-delete.jpg" alt="Delete confirmation dialog" loading="lazy">
+              <figcaption>Delete confirmation</figcaption>
+            </figure>
+            <figure class="shot">
+              <img src="assets/cms-04-search.jpg" alt="Search filter applied to customer list" loading="lazy">
+              <figcaption>Search filter</figcaption>
+            </figure>
           </div>
         </article>
 
@@ -138,8 +181,8 @@
             </div>
           </div>
           <div class="links">
-            <a href="#" target="_blank">Demo</a>
-            <a href="#" target="_blank">Code</a>
+            <a href="#goldfields">Demo</a>
+            <a href="#" target="_blank" rel="noopener">Code</a>
             <a href="#goldfields">Case study</a>
           </div>
         </article>
@@ -152,7 +195,7 @@
             </div>
           </div>
           <div class="links">
-            <a href="#" target="_blank">Code</a>
+            <a href="#" target="_blank" rel="noopener">Code</a>
             <a href="#nlp">Case study</a>
           </div>
         </article>
