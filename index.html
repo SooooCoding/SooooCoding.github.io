@@ -6,11 +6,11 @@
   <title>Sujin Bae — Portfolio</title>
   <style>
     :root{
-      --bg:#f7f8fc;          /* page background */
-      --surface:#ffffff;     /* cards/sidebar */
-      --text:#1f2937;        /* main text */
-      --muted:#6b7280;       /* secondary text */
-      --primary:#1976d2;     /* accent (MUI blue) */
+      --bg:#f7f8fc;
+      --surface:#ffffff;
+      --text:#1f2937;
+      --muted:#6b7280;
+      --primary:#1976d2;
       --shadow: 0 8px 24px rgba(0,0,0,.08);
       --radius:16px;
     }
@@ -54,17 +54,18 @@
     /* Contact */
     .contact-list{display:grid;gap:8px}
 
-    /* Responsive */
+    /* 작은 화면에서만 스킬 카드 1열 */
     @media (max-width:560px){
       .grid{grid-template-columns:1fr}
     }
 
-    /* Screenshots grid – neat 2-column gallery with captions */
+    /* Screenshots grid – 2열 갤러리 */
     .shots{
       display:grid;
       grid-template-columns:repeat(2,minmax(0,1fr));
       gap:14px;
       margin-top:12px;
+      margin-bottom:8px;
     }
     .shot{
       background:var(--surface);
@@ -72,24 +73,30 @@
       border-radius:12px;
       box-shadow:var(--shadow);
       overflow:hidden;
+      transition:.18s ease;
     }
-    .shot img.pos-left { object-position: 20% 50%; } 
+    .shot:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,.08)}
+    .shot a{display:block}
+
     .shot img{
       width:100%;
       height:auto;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
+      aspect-ratio:16/9;    /* 높이 통일 */
+      object-fit:cover;     /* 중앙 기준 크롭 */
       display:block;
     }
+    .shot img.pos-left{object-position:20% 50%} /* Delete 컷만 왼쪽 포커스 */
+
     .shot figcaption{
       padding:8px 10px;
       font-size:13px;
       color:var(--muted);
       border-top:1px solid #f1f5f9;
     }
-    .shot:hover{transform:translateY(-2px);box-shadow:0 12px 28px rgba(0,0,0,.08)}
-    .shot{transition:.18s ease}
-    @media (max-width:980px){ .shots{grid-template-columns:1fr} }
+    /* ✅ 560px 이하에서만 1열 */
+    @media (max-width:560px){
+      .shots{grid-template-columns:1fr}
+    }
   </style>
 </head>
 <body>
@@ -155,29 +162,29 @@
           <div class="shots">
             <figure class="shot">
               <a href="assets/cms-01-table.jpg" target="_blank" rel="noopener">
-                <img src="assets/cms-01-table.jpg"  alt="Customer list table view" loading="lazy">
+                <img src="assets/cms-01-table.jpg" alt="Customer list table view" loading="lazy">
               </a>
               <figcaption>Table view</figcaption>
             </figure>
-            
+
             <figure class="shot">
               <a href="assets/cms-02-add.jpg" target="_blank" rel="noopener">
-                <img src="assets/cms-02-add.jpg"    alt="Add Customer dialog with file upload" loading="lazy">
+                <img src="assets/cms-02-add.jpg" alt="Add customer dialog with file upload" loading="lazy">
               </a>
               <figcaption>Add customer dialog</figcaption>
             </figure>
-            
+
             <figure class="shot">
               <a href="assets/cms-03-delete.jpg" target="_blank" rel="noopener">
-                <img class="pos-left" src="assets/cms-03-delete.jpg"
-                     alt="Delete confirmation dialog" loading="lazy">
+                <img class="pos-left" src="assets/cms-03-delete.jpg" alt="Delete confirmation dialog" loading="lazy">
               </a>
               <figcaption>Delete confirmation</figcaption>
             </figure>
+
             <figure class="shot">
-              <a href="assets/cms-01-table.jpg" target="_blank" rel="noopener">
+              <a href="assets/cms-04-search.jpg" target="_blank" rel="noopener">
                 <img src="assets/cms-04-search.jpg" alt="Search filter applied to customer list" loading="lazy">
-              /a>
+              </a>
               <figcaption>Search filter</figcaption>
             </figure>
           </div>
