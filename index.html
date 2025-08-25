@@ -54,12 +54,11 @@
     /* Contact */
     .contact-list{display:grid;gap:8px}
 
-    /* 작은 화면에서만 스킬 카드 1열 */
     @media (max-width:560px){
       .grid{grid-template-columns:1fr}
     }
 
-    /* Screenshots grid – 2열 갤러리 */
+    /* Screenshots grid */
     .shots{
       display:grid;
       grid-template-columns:repeat(2,minmax(0,1fr));
@@ -81,11 +80,11 @@
     .shot img{
       width:100%;
       height:auto;
-      aspect-ratio:16/9;    /* 높이 통일 */
-      object-fit:cover;     /* 중앙 기준 크롭 */
+      aspect-ratio:16/9;    
+      object-fit:cover;     
       display:block;
     }
-    .shot img.pos-left{object-position:20% 50%} /* Delete 컷만 왼쪽 포커스 */
+    .shot img.pos-left{object-position:20% 50%} 
 
     .shot figcaption{
       padding:8px 10px;
@@ -93,7 +92,6 @@
       color:var(--muted);
       border-top:1px solid #f1f5f9;
     }
-    /* ✅ 560px 이하에서만 1열 */
     @media (max-width:560px){
       .shots{grid-template-columns:1fr}
     }
